@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class PlayerScript : MonoBehaviour
+public class PlayerMovementMadu : MonoBehaviour
 {
     public Camera playerCamera;
     public float walkSpeed = 6f;
@@ -77,5 +77,4 @@ public class PlayerScript : MonoBehaviour
 
         #endregion
     }
-
 }

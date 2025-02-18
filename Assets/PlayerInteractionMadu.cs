@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteractionMadu : MonoBehaviour
 {
-
     public float playerReach = 3f;
-    Interactable currentInteractable;
+    InteractableMadu currentInteractable;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckInteraction();
-        if(Input.GetKeyDown(KeyCode.F) && currentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.F) && currentInteractable != null)
         {
             currentInteractable.Interact();
         }
@@ -27,16 +26,16 @@ public class PlayerInteraction : MonoBehaviour
     void CheckInteraction()
     {
         RaycastHit hit;
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);   
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
         //if colliders with anything within player reach
-        if(Physics.Raycast(ray, out hit, playerReach))
+        if (Physics.Raycast(ray, out hit, playerReach))
         {
-            if(hit.collider.tag == "Interactable")//if looking at an interactable object
+            if (hit.collider.tag == "Interactable")//if looking at an interactable object
             {
-                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+                InteractableMadu newInteractable = hit.collider.GetComponent<InteractableMadu>();
 
-                if(currentInteractable && newInteractable != currentInteractable)
+                if (currentInteractable && newInteractable != currentInteractable)
                 {
                     currentInteractable.DisableOutline();
                 }
@@ -52,23 +51,24 @@ public class PlayerInteraction : MonoBehaviour
         }
         else //if nothing in reach
         {
-            DisableCurrentInteractable();   
+            DisableCurrentInteractable();
         }
     }
 
-    void SetNewCurrentInteractable(Interactable newInteractable)
+    void SetNewCurrentInteractable(InteractableMadu newInteractable)
     {
         currentInteractable = newInteractable;
         currentInteractable.EnableOutline();
+        HUDControllerMadu.instance.EnableInteractionText("Pickup (F)");
     }
 
     void DisableCurrentInteractable()
     {
+        HUDControllerMadu.instance.DisableInteractionText();
         if (currentInteractable)
         {
             currentInteractable.DisableOutline();
             currentInteractable = null;
         }
     }
-
 }

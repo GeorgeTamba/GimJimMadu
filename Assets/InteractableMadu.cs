@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Interactable : MonoBehaviour
+public class InteractableMadu : MonoBehaviour
 {
     Outline outline;
     public string message;
@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Interact()
@@ -36,7 +36,6 @@ public class Interactable : MonoBehaviour
 
     public void EnableOutline()
     {
-        outline.enabled = true; 
+        outline.enabled = true;
     }
-
 }
