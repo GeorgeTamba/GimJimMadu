@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("test github");
         Cursor.lockState = CursorLockMode.Locked;
         currentSpeed = walkSpeed;
 
