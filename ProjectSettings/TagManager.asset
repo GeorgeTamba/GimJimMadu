@@ -4,32 +4,36 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - CinemachineTarget
+  - Item
+  - Demon
+  - Baby
+  - Sunak
   - Enemy
-  - FirePoint
-  - Critical
-  - Weapons
-  - Ramp
-  - BodyShot
-  - Ladder
+  - FlickableObject
+  - UIItem
+  - SunakPoint
+  - HorrorItem
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Weapons
-  - Enemy
-  - Object
-  - Interactable
-  - Grass
-  - Metal
-  - Mud
-  - Wood
-  - UITop
-  - PostProcessing
-  - Effects
-  - Player
+  - 
+  - 
+  - Character
+  - Ground
+  - Demon
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
